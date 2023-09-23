@@ -1,95 +1,102 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  Container,
+  Flex,
+  Heading,
+  HoverCard,
+  Section,
+  Strong,
+  Text,
+} from "@radix-ui/themes";
+import Image from "next/image";
+import logo from "@/app/assets/logo.png";
+import { memberImages } from "./assets/member";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <Flex direction="column" align="center">
+        <Image src={logo.src} alt="toppings" width={360} height={360} />
+      </Flex>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <Section ml="8">
+        <Heading size="6" mt="4">
+          우리는 꿈을 팔지 않아요
+        </Heading>
+        <Heading size="6" mt="4">
+          우리는 상상력을 만들어요
+        </Heading>
+      </Section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <Section mx="8">
+        <Heading size="6">Problem Solver</Heading>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <Section pt="0">
+          {맴버들.map((맴버) => (
+            <Card key={맴버.이름} mt="4" size="5">
+              <Flex gap="3" align="center">
+                <HoverCard.Root>
+                  <HoverCard.Trigger>
+                    <Avatar
+                      size="8"
+                      src={맴버.이미지.src}
+                      radius="full"
+                      fallback="T"
+                    />
+                  </HoverCard.Trigger>
+                  <HoverCard.Content size="3">{맴버.컨텐츠}</HoverCard.Content>
+                </HoverCard.Root>
+                <Box ml="8">
+                  <Text as="div" size="9" weight="bold">
+                    {맴버.이름}
+                  </Text>
+                  <Text as="div" size="8" color="gray" mt="4">
+                    {맴버.소개}
+                  </Text>
+                </Box>
+              </Flex>
+            </Card>
+          ))}
+        </Section>
+      </Section>
     </main>
-  )
+  );
 }
+
+const 맴버들 = [
+  {
+    이름: "이시연",
+    소개: "90년대 MZ세대의 대장",
+    이미지: memberImages[0],
+    컨텐츠: (
+      <Text>
+        그는 팀 토핑즈의<Strong>미술부장</Strong>이에요
+      </Text>
+    ),
+  },
+  {
+    이름: "박찬혁",
+    소개: "재치있는 등산가",
+    이미지: memberImages[1],
+    컨텐츠: (
+      <Text>
+        그는 <Strong>기술적 고민</Strong> 해결사에요
+      </Text>
+    ),
+  },
+  {
+    이름: "조해창",
+    소개: "괴짜 몽상가",
+    이미지: memberImages[2],
+    컨텐츠: (
+      <Text>
+        그는 팀 토핑즈의<Strong>꿈 항해사</Strong>에요
+      </Text>
+    ),
+  },
+];
