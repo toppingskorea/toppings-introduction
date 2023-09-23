@@ -75,7 +75,7 @@ const 맴버들 = [
     이미지: memberImages[0],
     컨텐츠: (
       <Text>
-        그는 팀 토핑즈의<Strong>미술부장</Strong>이에요
+        그녀는 팀 토핑즈의<Strong>미술부장</Strong>이에요
       </Text>
     ),
   },
@@ -90,9 +90,19 @@ const 맴버들 = [
     ),
   },
   {
+    이름: "이철희",
+    소개: "화면위의 집사",
+    이미지: memberImages[2],
+    컨텐츠: (
+      <Text>
+        그는 팀 토핑즈의 화면위의<Strong> 미술사</Strong>에요
+      </Text>
+    ),
+  },
+  {
     이름: "조해창",
     소개: "괴짜 몽상가",
-    이미지: memberImages[2],
+    이미지: memberImages[3],
     컨텐츠: (
       <Text>
         그는 팀 토핑즈의<Strong>꿈 항해사</Strong>에요
