@@ -21,14 +21,14 @@ export default function Home() {
   return (
     <main>
       <Flex direction="column" align="center">
-        <Image src={logo.src} alt="toppings" width={360} height={360} />
+        <Image src={logo.src} alt="toppings" width={560} height={560} />
       </Flex>
 
-      <Section ml="8">
-        <Heading size="6" mt="4">
+      <Section pt="0" ml="8">
+        <Heading size="8" mt="4">
           우리는 꿈을 팔지 않아요
         </Heading>
-        <Heading size="6" mt="4">
+        <Heading size="8" mt="4">
           우리는 상상력을 만들어요
         </Heading>
       </Section>
