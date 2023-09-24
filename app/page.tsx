@@ -3,7 +3,7 @@ import { FootprintsCard } from "@/modules/main/FootprintsCard.desktop";
 import { MemberCard } from "@/modules/main/MemberCard.desktop";
 import { 맴버들 } from "@/modules/main/맴버들";
 import { 발자취들 } from "@/modules/main/발자취들";
-import { Flex, Heading, Section } from "@radix-ui/themes";
+import { Flex, Heading, Kbd, Section } from "@radix-ui/themes";
 import Image from "next/image";
 
 export default function Home() {
@@ -52,6 +52,21 @@ export default function Home() {
           ))}
         </Section>
       </Section>
+
+      <Section pt="0" ml="8">
+        <Heading size="6">Consensus</Heading>
+
+        <Heading size="8" mt="4">
+          세상의 문제를 빠르게 해결해요
+        </Heading>
+        <Heading size="8" mt="4">
+          토핑즈 행성에서 파티하는 그날까지
+        </Heading>
+      </Section>
+
+      <Flex direction="column" align="center" my="8">
+        <Kbd size="5">@team toppings</Kbd>
+      </Flex>
     </main>
   );
 }
