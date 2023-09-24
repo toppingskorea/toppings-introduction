@@ -1,6 +1,7 @@
 import { ValueOf } from "type-fest";
 
 export const 맴버_이름_목록 = {
+  김규남: "김규남",
   김동규: "김동규",
   박찬혁: "박찬혁",
   변해빈: "변해빈",

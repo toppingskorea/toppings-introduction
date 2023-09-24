@@ -1,3 +1,4 @@
+import 규남 from "./규남.png";
 import 찬혁 from "./찬혁.png";
 import 시연 from "./시연.png";
 import 철희 from "./철희.png";
@@ -7,6 +8,10 @@ import 해빈 from "./해빈.png";
 import { 맴버_이름_목록 } from "@/constants/member";
 
 export const memberImages = [
+  {
+    이름: "김규남",
+    이미지: 규남,
+  },
   {
     이름: "김동규",
     이미지: 동규,

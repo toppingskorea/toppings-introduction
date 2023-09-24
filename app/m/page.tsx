@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.png";
-import { MemberCard } from "@/modules/main/MemberCard.desktop";
+import { MemberCard } from "@/modules/main/MemberCard.mobile";
 import { 맴버들 } from "@/modules/main/맴버들";
 import { Flex, Heading, Section } from "@radix-ui/themes";
 import Image from "next/image";
@@ -8,17 +8,12 @@ export default function Home() {
   return (
     <main>
       <Flex direction="column" align="center">
-        <Image src={logo.src} alt="toppings" width={560} height={560} />
-      </Flex>
-
-      <Section pt="0" ml="8">
-        <Heading size="8" mt="4">
-          우리는 꿈을 팔지 않아요
-        </Heading>
-        <Heading size="8" mt="4">
+        <Image src={logo.src} alt="toppings" width={320} height={320} />
+        <Heading size="4">우리는 꿈을 팔지 않아요</Heading>
+        <Heading size="4" mt="4">
           우리는 상상력을 만들어요
         </Heading>
-      </Section>
+      </Flex>
 
       <Section mx="8">
         <Heading size="6">Problem Solver</Heading>
